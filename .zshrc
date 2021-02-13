@@ -108,6 +108,8 @@ ZSH_HIGHLIGHT_STYLES[function]='fg=#5fd787,bold'
 ZSH_HIGHLIGHT_STYLES[command]='fg=#5fd787,bold'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#ffaf00'
 ZSH_HIGHLIGHT_STYLES[path]='none'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#8787ff'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#8787ff'
 
 ######################################
 #             FUZZY FINDER           # 
