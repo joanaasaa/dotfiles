@@ -10,4 +10,8 @@ packadd! dracula
 syntax enable
 colorscheme dracula
 
-hi Normal guibg=NONE ctermbg=NONE
+" Transparent backgroud
+hi Normal guibg=NONE ctermbg=NONE 
+
+" Display line numbers
+set number
