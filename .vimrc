@@ -15,3 +15,6 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Display line numbers
 set number
+
+" Allow to use mouse scroll´
+set mouse=a
