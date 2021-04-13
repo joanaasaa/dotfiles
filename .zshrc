@@ -117,16 +117,19 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#8787ff'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ######################################
-#                 TMUX               # 
+#               ALIASES              # 
 ######################################
 alias t='tmux at || tmux'
 alias t-kill='tmux kill-server'
-
+alias gsctl2path='export PATH="$HOME/bin:$PATH"'
+alias rc='source ~/.zshrc'
 
 ######################################
 #             GIT ALIASES            # 
 ######################################
 alias gst='git status'
+alias gf='git fetch'
+alias gl='git log'
 alias ga='git add'
 alias gaa='git add --all'
 alias gcm='git commit -m'
@@ -139,6 +142,7 @@ alias gsm='git stash push -m'
 alias gsp='git stash pop'
 alias gsl='git stash list'
 alias gr='git restore'
+alias grs='git restore --staged'
 
 ######################################
 #                START               # 
