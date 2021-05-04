@@ -106,14 +106,14 @@ source $ZSH/oh-my-zsh.sh
 #               ZSH SYNTAX HIGHLIGHTING                #
 ########################################################
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#5fd787,bold'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#5fd787,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=#5fd787,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=#5fd787,bold'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#ffaf00'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=84,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=84,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=84,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=84,bold'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=215'
 ZSH_HIGHLIGHT_STYLES[path]='none'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#8787ff'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#8787ff'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=141'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=141'
 
 ######################################
 #             FUZZY FINDER           # 
