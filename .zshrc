@@ -149,6 +149,16 @@ alias gr='git restore'
 alias grs='git restore --staged'
 
 ######################################
-#                START               # 
+#              ISTSAT                # 
 ######################################
+alias build-obc='PROJECT=OBCMain TARGET_ARCH=ARCH_OBC make buildP -j 4'
+alias build-eps='PROJECT=EPSMain TARGET_ARCH=ARCH_EPS make buildP -j 4'
+alias build-com='PROJECT=COMMain TARGET_ARCH=ARCH_COM make buildP -j 4'
+alias build-pl='PROJECT=PLMain TARGET_ARCH=ARCH_PLM4 make buildP -j 4'
+
+alias flash-obc='PROJECT=OBCMain TARGET_ARCH=ARCH_OBC make flashP -j 4'
+alias flash-eps='PROJECT=EPSMain TARGET_ARCH=ARCH_EPS make flashP -j 4'
+alias flash-com='PROJECT=COMMain TARGET_ARCH=ARCH_COM make flashP -j 4'
+alias flash-pl='PROJECT=PLMain TARGET_ARCH=ARCH_PLM4 make flashP -j 4'
+
 cd ~/Documents/Software/
