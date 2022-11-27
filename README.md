@@ -1,27 +1,23 @@
 # dotfiles by joanaasaa
 
 ![A very Dracula screenshot](resources/screenshot.png "A very Dracula screenshot")
-<p align="center">🧛 Dracula for gnome-terminal, zsh, tmux and vim using the Viktor Mono font 🧛</p>
+**<p align="center">🧛 Dracula for gnome-terminal, zsh, tmux and vim using Viktor Mono font 🧛</p>**
 
 ## Environment
 
-The repo includes Dracula themed rc files for the following apps:
-- gnome-terminal (`dracula-zsh.dconf` file)
-- zsh using oh-my-zsh (`.zshrc` and `dracula.zsh-theme` file)
-- vim (`.vimrc` file)
-- tmux (`.tmux.conf` file)
+- gnome-terminal
+- zsh using oh-my-zsh
+- vim
+- tmux
 
 ## Features
 
-- Includes rc files for the following apps:
-    - gnome-terminal (`dracula-zsh.dconf`)
-    - zsh using oh-my-zsh (`.zshrc`)
-    - vim (`.vimrc`)
-- Configuration file for tmux (`.tmux.conf`)
 - Syntax highlighting with Dracula colors through oh-my-zsh plugin
 - Custom tmux theme with Dracula colors, datetime and CPU usage
+- tmux keybindings
 - Altered zsh theme (through oh-my-zsh) to have official Dracula colors
-- Includes simple vim configuration with lightline
+- Simple vim configuration with lightline
+- Fuzzy finder installation
 
 ## Setup
 
@@ -46,7 +42,7 @@ I used Zeno Rocha's Dracula theme (which you can find on [this](https://draculat
     4. To use Zeno's Dracula palette do: `cp zsh-master/lib/async.zsh ~/.oh-my-zsh/themes/lib/`\
     To use my Dracula palette do: `cp dotfiles/dracula.zsh-theme ~/.oh-my-zsh/themes/`
     5. To install the syntax highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`\
-    _NOTE_ The `.zshrc` file already includes     dracula colors for the syntax highlighting plugin
+    _NOTE_ The `.zshrc` file already includes dracula colors for the syntax highlighting plugin
 
 5. For vim:
     1. Install [vim-plug](https://github.com/junegunn/vim-plug): `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
@@ -56,6 +52,15 @@ I used Zeno Rocha's Dracula theme (which you can find on [this](https://draculat
 6. For tmux:
     1. Install the tmux-cpu plugin: `git clone https://github.com/tmux-plugins/tmux-cpu ~/.tmux/plugins/tmux-cpu`
     2. Restart tour tmux server
+
+7. Fuzzy Finder:
+    1. Install fzf using the following commands:
+        ```sh
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install
+        ```
+    2. **DURING INSTALLATION** Enable fzf autocompletion and key bindings. Say no to shell configuration file update
+    
       
 
 **<p align="center">🎉 Congratulations, you're all set! 🎉</p>**
