@@ -160,5 +160,3 @@ alias flash-obc='PROJECT=OBCMain TARGET_ARCH=ARCH_OBC make flashP -j 4'
 alias flash-eps='PROJECT=EPSMain TARGET_ARCH=ARCH_EPS make flashP -j 4'
 alias flash-com='PROJECT=COMMain TARGET_ARCH=ARCH_COM make flashP -j 4'
 alias flash-pl='PROJECT=PLMain TARGET_ARCH=ARCH_PLM4 make flashP -j 4'
-
-cd ~/Documents/Software/

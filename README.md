@@ -1,64 +1,61 @@
 # dotfiles by joanaasaa
 
-**Hello everyone! 👋** 
-
-When I was setting up my terminal I looked up other dotfiles folders from other users and it helped me a lot! So, I decided to make my **beginner** dotfiles public in hopes they (along with this small setup guide) would also help other beginners setting up their terminals!
-
-## Screenshots
-
-![Dracula for Zsh, Tmux and Vim](resources/dracula_zsh_tmux_vim.png "Dracula for Zsh, Tmux and Vim")
-**<p align="center">Dracula for Zsh, Tmux and Vim</p>**
+![Dracula for gnome-terminal, zsh, tmux and vim using Viktor Mono font](resources/screenshot.png "Dracula for gnome-terminal, zsh, tmux and vim using Viktor Mono font")
+**<p align="center">🧛 Dracula for Zsh, Tmux and Vim 🧛</p>**
 
 ## Environment
 
-I use this setup on:
+The repo includes Dracula themed rc files for the following apps:
+- GNOME Terminal (`dracula-zsh.dconf` file)
+- zsh using oh-my-zsh (`.zshrc` and `dracula.zsh-theme` file)
+- vim (`.vimrc` file)
+- tmux (`.tmux.conf` file)
 
-- Mac with the iTerm2 terminal app 
-- Ubuntu with GNOME Terminal
+## Features
 
-These dotfiles are for the following applications:
-
-- Zsh (oh-my-zsh themes: af-magic, dracula)
-- Vim (themes: dracula)
-- Tmux (themes: af-magic, dracula)
-
-Useless to say that I'm a dracula fan! 🧛
+- Includes rc files for the following apps:
+    - GNOME Terminal (`dracula-zsh.dconf`)
+    - zsh using oh-my-zsh (`.zshrc`)
+    - vim (`.vimrc`)
+- Configuration file for tmux (`.tmux.conf`)
+- Syntax highlighting with Dracula colors through oh-my-zsh plugin
+- Custom tmux theme with Dracula colors, datetime and CPU usage
+- Altered zsh theme (through oh-my-zsh) to have official Dracula colors
+- Includes simple vim configuration with lightline
 
 ## Setup
-1. Start by cloning this repo. Preferably do this in your home folder: \
-```git clone https://github.com/joanaasaa/dotfiles.git``` \
-A folder named ```dotfiles``` will be created with the repo.
 
-2. Change to the ```dotfiles``` directory: \
-```cd dotfiles```
+1. Clone this repo: `git clone https://github.com/joanaasaa/dotfiles.git` 
 
-3. Create soft links in your home folder to the ```.zshrc```, ```.vimrc``` and ```.tmux.conf``` files in this repo: \
-```ln -s ./.zshrc ~/.zshrc``` \
-```ln -s ./.vimrc ~/.vimrc``` \
-```ln -s ./.tmux.conf ~/.tmux.conf```
+2. Either copy what interests from the zsh, vim and tmux rc files or create softlinks:\
+`ln -s dotfiles/.zshrc ~/.zshrc` \
+`ln -s dotfiles/.vimrc ~/.vimrc` \
+`ln -s dotfiles/.tmux.conf ~/.tmux.conf`
 
-4. Choose which themes you want to use for the apps. Don't forget to install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) for Zsh themes:
-   
-   1. If you wish to use oh-my-zsh's **af-magic theme**:
-      1. For zsh, open up the ```.zshrc``` file and make sure your zsh theme is set to af-magic: 
-        ```ZSH_THEME="af-magic"```
+3. For the GNOME Terminal:
+    1. Install the [Viktor Mono font](https://rubjo.github.io/victor-mono/)
+    2. Load the GNOME Terminal profile to your GNOME Terminal emulator: `dconf load /org/gnome/terminal/legacy/profiles:/ < dracula-zsh.dconf`
+    3. Go to the terminal emulator's Preferences menu and make sure that you are using the Dracula profile.\
+    _NOTE_ The profile also includes a command which uses Zsh as the startup shell when GNOME Terminal opens.
 
-      2. For tmux, I created a theme to match af-magic, based on Ham Vocke's tmux theme. You can find the original [here](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/). To use my adaptation, go to the ```.tmux.conf``` file and uncomment the code that goes in-between the following banners: \
-        ```<<<<<< UNCOMMENT FROM HERE FOR AF-MAGIC THEME``` \
-        ```<<<<<< UNCOMMENT TO HERE FOR AF-MAGIC THEME```
+4. For Zsh:\
+I used Zeno Rocha's Dracula theme (which you can find on [this](https://draculatheme.com/zsh) link) but changed the color palette to match the [official Dracula colors](https://draculatheme.com/contribute#color-palette)
+    1. Download the dracula theme [this](https://github.com/dracula/zsh/archive/master.zip) zip file
+    2. Unzip the downloaded zip file: `unzip zsh-master.zip`
+    3. `cp zsh-master/lib/async.zsh ~/.oh-my-zsh/lib/async.zsh`
+    4. To use Zeno's Dracula palette do: `cp zsh-master/lib/async.zsh ~/.oh-my-zsh/themes/lib/`\
+    To use my Dracula palette do: `cp dotfiles/dracula.zsh-theme ~/.oh-my-zsh/themes/`
+    5. To install the syntax highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`\
+    _NOTE_ The `.zshrc` file already includes     dracula colors for the syntax highlighting plugin
 
-   2. If you prefer to use the **dracula theme**:
-      1. For zsh, I used Zeno Rocha's theme and changed the colors slightly so they are more to my liking. For the setup I followed Zeno's "Install manually" guide from [this link](https://draculatheme.com/zsh). After doing this, if you'd like to use my color palette, copy my adaptation of Zeno's file into the correct folder: \
-        ```cp ./dracula.zsh-theme ~/.oh-my-zsh/themes/```
+5. For Vim:
+    1. Install [vim-plug](https://github.com/junegunn/vim-plug): `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+    2. `vim .vimrc`
+    3. Run the command `:PlugInstall` to install all Vim plugins using vim-plug
+
+6. For Tmux:
+    1. Install the tmux-cpu plugin: `git clone https://github.com/tmux-plugins/tmux-cpu ~/.tmux/plugins/tmux-cpu`
+    2. Restart tour tmux server
       
-      2. For tmux, I created a theme based on [cassidycodes](https://cassidy.codes/) dracula tmux theme. To use my adaptation, go to the ```.tmux.conf``` file and uncomment the code that goes in-between the following banners: \
-        ```<<<<<< UNCOMMENT FROM HERE FOR DRACULA THEME``` \
-        ```<<<<<< UNCOMMENT TO HERE FOR DRACULA THEME```
-      
-      3. For Vim ...
 
 **<p align="center">🎉 Congratulations, you've reached the end! 🎉</p>**
-
-## TODO
-- [ ] Write setup for Vim's dracula theme
-- [ ] Add screenshot for af-magic Tmux and Zsh themes
