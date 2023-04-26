@@ -1,0 +1,7 @@
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = https://github.com/dracula/zsh-syntax-highlighting
+
+[submodule "gnome-terminal"]
+	path = gnome-terminal
+	url = git clone https://github.com/dracula/gnome-terminal

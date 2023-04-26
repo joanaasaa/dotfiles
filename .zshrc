@@ -72,7 +72,11 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(
+	git 
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -160,3 +164,17 @@ alias flash-obc='PROJECT=OBCMain TARGET_ARCH=ARCH_OBC make flashP -j 4'
 alias flash-eps='PROJECT=EPSMain TARGET_ARCH=ARCH_EPS make flashP -j 4'
 alias flash-com='PROJECT=COMMain TARGET_ARCH=ARCH_COM make flashP -j 4'
 alias flash-pl='PROJECT=PLMain TARGET_ARCH=ARCH_PLM4 make flashP -j 4'
+
+######################################
+#               FREIHEIT             # 
+######################################
+GOPATH=$HOME/go
+export CONAN_LOGIN_USERNAME=divku640@dentsplysirona.com
+export CONAN_PASSWORD=AKCp8ogzT8prsXP2PquHrEzisXgS9hLqp2nX3AULt6gUKFPR5SA9mzHeoQjK7wgsjFWi6SEaz
+
+coverage(){
+        NOW=$(date +%s)
+        OUT=/tmp/coverage-$NOW.out
+        go test --coverprofile=$OUT $1
+        go tool cover --html=$OUT
+}
